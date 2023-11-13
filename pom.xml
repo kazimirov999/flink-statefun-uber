@@ -10,13 +10,21 @@
 
   <properties>
     <java.version>11</java.version>
+    <maven.compiler.target>${java.version}</maven.compiler.target>
+    <maven.compiler.source>${java.version}</maven.compiler.source>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <flink.version>1.16.2</flink.version>
+    <statefun-flink-distribution.version>3.3.0</statefun-flink-distribution.version>
+    <flink-streaming-java_2.12.version>1.7.1</flink-streaming-java_2.12.version>
+    <flink-runtime-web_2.12.version>1.12.2</flink-runtime-web_2.12.version>
+    <slf4j-log4j12.version>1.7.36</slf4j-log4j12.version>
+    <log4j.version>1.2.17</log4j.version>
+    <junit-jupiter.version>5.8.2</junit-jupiter.version>
     <statefun-flink-core.version>3.3.0</statefun-flink-core.version>
     <flink-core.version>1.16.2</flink-core.version>
     <flink-streaming-java.version>1.16.2</flink-streaming-java.version>
-    <statefun-flink-distribution.version>3.3.0</statefun-flink-distribution.version>
-    <maven-compiler-plugin.version>3.1</maven-compiler-plugin.version>
     <maven-shade-plugin.version>3.0.0</maven-shade-plugin.version>
+    <maven-compiler-plugin.version>3.1</maven-compiler-plugin.version>
   </properties>
 
   <dependencies>
@@ -46,13 +54,11 @@
       <groupId>org.apache.flink</groupId>
       <artifactId>flink-core</artifactId>
       <version>${flink-core.version}</version>
-      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.apache.flink</groupId>
       <artifactId>flink-streaming-java</artifactId>
       <version>${flink-streaming-java.version}</version>
-      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.apache.flink</groupId>
@@ -64,7 +70,7 @@
     <dependency>
       <groupId>org.apache.flink</groupId>
       <artifactId>statefun-flink-distribution</artifactId>
-      <version>${statefun-flink-distribution.version}</version>
+      <version>3.3.0</version>
       <exclusions>
         <exclusion>
           <groupId>org.slf4j</groupId>
